@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1b263b, #415a77);
+}
+
+/* ===== CLOCK CONTAINER ===== */
+#clock {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 30px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: fadeIn 1.2s ease;
+}
+
+/* TITLE */
+#clock h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    font-size: 0.9em;
+}
+
+/* TIME WRAPPER */
+#clock #time {
+    display: flex;
+    gap: 15px;
+}
+
+/* EACH BLOCK */
+#clock #time div {
+    position: relative;
+    text-align: center;
+    -webkit-box-reflect: below 2px linear-gradient(transparent, rgba(0,0,0,0.2));
+}
+
+/* VALUE BOX */
+#clock #time div span:first-child {
+    width: 110px;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    border-radius: 15px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    transition: 0.3s;
+}
+
+
+/* LABEL */
+#clock #time div span:nth-child(2) {
+    margin-top: 6px;
+    font-size: 0.7em;
+    letter-spacing: 0.15em;
+    color: #e0e0e0;
+    text-transform: uppercase;
+}
+
+/* ===== SPECIAL COLORS ===== */
+#clock #time div:nth-last-child(2) span:first-child {
+    background: linear-gradient(135deg, #ff006a, #b30047);
+}
+
+#clock #time div:nth-last-child(1) span:first-child {
+    background: linear-gradient(135deg, #fff, #e0e0e0);
+    color: #000;
+    font-size: 2em;
+}
+
+
+/* LABEL DETIK */
+#clock #time div:nth-last-child(1) span:nth-child(2) {
+    color: #fff;
+}
+
+/* ======================== */
+/*   ANIMASI DETIK ELEGANT */
+/* ======================== */
+
+#clock #time div:nth-last-child(1) span:first-child {
+    animation: flipElegant 1s infinite ease-in-out;
+    transform-origin: center bottom;
+}
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Flip 3D elegan */
+@keyframes flipElegant {
+    0% { transform: rotateX(0deg); }
+    40% { transform: rotateX(180deg); }
+    100% { transform: rotateX(360deg); }
+}
